@@ -12,29 +12,25 @@ class MovieSlider extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding
-          (
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Text
-            (
+            child: Text(
               'Populares', 
-              style: TextStyle
-              (
+              style: TextStyle(
                 fontSize: 20, 
                 fontWeight: FontWeight.w400
               )
             )
           ),
           Expanded(
-            child: ListView.builder
-            (
+            child: ListView.builder(
               itemCount: 20,
-              itemBuilder: ( _, int index) 
-              {
+              itemBuilder: ( _, int index) {
                 return Container(
                   width: 130,
                   height: 190,
-                  color: Colors.green
+                  color: Colors.green,
+                  margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10)
                 );
               }
             ),
