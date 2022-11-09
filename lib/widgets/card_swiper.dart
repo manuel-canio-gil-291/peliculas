@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_card_swipper/flutter_card_swiper.dart';
 
 class CardSwiper extends StatelessWidget {
   const CardSwiper({super.key});
@@ -11,7 +12,17 @@ class CardSwiper extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: size.height * 0.9,
-      color: Colors.red
+      color: Colors.red,
+      child: Swiper(
+        itemCount: 10, layout: SwiperLayout.STACK,
+        itemWidth: size.width * 0.6,
+        itemHeight: size.height * 0.9,
+        itemBuilder: ( _, int index) {
+          return FadeInImage(
+            placeholder: NetworkImage, 
+            image: NetworkImage
+            );
+        },)
     );
   }
 }
