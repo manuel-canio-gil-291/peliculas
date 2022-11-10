@@ -9,10 +9,10 @@ class DetailsScreen extends StatelessWidget{
     final String movie = ModalRoute.of(context)?.settings.arguments.toString() ?? '';
 
     return Scaffold(
-      body: Container(
-        child: const Center(
-          child: Text('Details Screen')
-        ),
+      body: CustomScrollView(
+        slivers: [
+          
+        ],
       )
     );
   }
