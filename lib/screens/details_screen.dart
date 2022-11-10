@@ -8,13 +8,27 @@ class DetailsScreen extends StatelessWidget{
     
     final String movie = ModalRoute.of(context)?.settings.arguments.toString() ?? '';
 
-    return Scaffold(
+    return const Scaffold(
       body: CustomScrollView(
         slivers: [
-          
+          _CustomAppBar()
         ],
       )
     );
   }
   
 }
+
+class _CustomAppBar extends StatelessWidget {
+  const _CustomAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const SliverAppBar(
+      backgroundColor: Colors.indigo,
+      expandedHeight: 200,
+      floating: false,
+      pinned: false,
+    );
+  }
+} 
