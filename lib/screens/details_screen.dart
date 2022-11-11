@@ -53,7 +53,7 @@ class _CustomAppBar extends StatelessWidget {
             style: TextStyle(fontSize: 16),
             ),
         ),
-        background: const FadeInImage(placeholder: AssetImage('assets/circular_progress_indicator_selective.gif'), image: NetworkImage('https://via.placeholder.com/500x300')),
+        background: const FadeInImage(placeholder: AssetImage('assets/circular_progress_indicator_selective.gif'), image: NetworkImage('https://via.placeholder.com/500x300.jpg')),
       ),
     );
   }
@@ -77,7 +77,7 @@ class _PosterAndTitle extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             child: const FadeInImage(
               placeholder: AssetImage('assets/circular_progress_indicator_square_small.gif'), 
-              image: NetworkImage('https://via.placeholder.com/200x300'), 
+              image: NetworkImage('https://via.placeholder.com/200x300.jpg'), 
               height: 150
             )
           ),
