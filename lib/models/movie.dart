@@ -32,7 +32,7 @@ class Movie {
     double voteAverage;
     int voteCount;
 
-    factory Movie.fromMap(Map<String, dynamic> json) => Movie(
+    factory Movie.fromJson(Map<String, dynamic> json) => Movie(
         adult: json["adult"],
         backdropPath: json["backdrop_path"],
         genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
