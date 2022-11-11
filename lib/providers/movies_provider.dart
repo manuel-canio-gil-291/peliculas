@@ -1,4 +1,4 @@
-import 'dart:convert' as convert;
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -27,7 +27,7 @@ class MoviesProvider extends ChangeNotifier {
 
     final response = await http.get(url);
     if(response.statusCode != 200) return print('error');
-    final Map<String, dynamic> decodedData = convert.json.decode(response.body);
+    final Map<String, dynamic> decodedData = json.decode(response.body);
     print(decodedData['dates']);
   }
 }
