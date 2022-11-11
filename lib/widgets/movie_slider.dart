@@ -8,7 +8,7 @@ class MovieSlider extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 250,
-      color: Colors.red,
+      color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -43,7 +43,7 @@ class _MoviePoster extends StatelessWidget {
     return Container(
       width: 130,
       height: 190,
-      color: Colors.green,
+      color: Colors.white,
       margin: const EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         children: [
@@ -53,7 +53,7 @@ class _MoviePoster extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               child: const FadeInImage(
                 placeholder: AssetImage('assets/circular_progress_indicator_square_small.gif'), 
-                image: NetworkImage('https://via.placeholder.com/300x400'),
+                image: NetworkImage('https://via.placeholder.com/300x400.jpg'),
                 width: 130,
                 height: 190,
                 fit: BoxFit.cover
