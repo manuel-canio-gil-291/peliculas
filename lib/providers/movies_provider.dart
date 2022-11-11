@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:peliculas/models/models.dart';
 
 class MoviesProvider extends ChangeNotifier {
   
@@ -9,6 +10,8 @@ class MoviesProvider extends ChangeNotifier {
   final String _baseUrl = 'api.themoviedb.org';
   final String _language = 'en-US';
   
+  List<Movie> onDisplayMovies = ;
+
   MoviesProvider() {
     print('MoviesProvider inicializado');
 
@@ -27,7 +30,10 @@ class MoviesProvider extends ChangeNotifier {
 
     final response = await http.get(url);
     if(response.statusCode != 200) return print('error');
+    final nowPlayingResponse = NowPlayingResponse.fromJson(response.body);
+
+    print(nowPlayingResponse.results[0].title);
     final Map<String, dynamic> decodedData = json.decode(response.body);
-    print(decodedData['dates']);
+    onDisplayMovies = nowPlayingResponse.results;
   }
 }
