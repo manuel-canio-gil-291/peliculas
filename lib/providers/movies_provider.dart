@@ -12,7 +12,7 @@ class MoviesProvider extends ChangeNotifier {
   MoviesProvider() {
     print('MoviesProvider inicializado');
 
-    this.getOnDisplayMovies();
+    getOnDisplayMovies();
   }
 
   getOnDisplayMovies() async {
