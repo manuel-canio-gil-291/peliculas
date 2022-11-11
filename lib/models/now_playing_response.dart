@@ -1,6 +1,6 @@
 // To parse this JSON data, do
 //
-//     final nowPlayingResponse = nowPlayingResponsefromMap(jsonString);
+//     final nowPlayingResponse = nowPlayingResponsefromJson(jsonString);
 
 import 'dart:convert';
 import 'package:peliculas/models/models.dart';
@@ -23,12 +23,12 @@ class NowPlayingResponse {
     int totalPages;
     int totalMovies;
 
-    NowPlayingResponse nowPlayingResponseFromJson(String str) => NowPlayingResponse.fromMap(json.decode(str));
+    NowPlayingResponse nowPlayingResponseFromJson(String str) => NowPlayingResponse.fromJson(json.decode(str));
 
-    factory NowPlayingResponse.fromMap(Map<String, dynamic> json) => NowPlayingResponse(
-        dates: Dates.fromMap(json["dates"]),
+    factory NowPlayingResponse.fromJson(Map<String, dynamic> json) => NowPlayingResponse(
+        dates: Dates.fromJson(json["dates"]),
         page: json["page"],
-        movies: List<Movie>.from(json["Movies"].map((x) => Movie.fromMap(x))),
+        movies: List<Movie>.from(json["Movies"].map((x) => Movie.fromJson(x))),
         totalPages: json["total_pages"],
         totalMovies: json["total_Movies"],
     );
@@ -51,7 +51,7 @@ class Dates {
     DateTime maximum;
     DateTime minimum;
 
-    factory Dates.fromMap(Map<String, dynamic> json) => Dates(
+    factory Dates.fromJson(Map<String, dynamic> json) => Dates(
         maximum: DateTime.parse(json["maximum"]),
         minimum: DateTime.parse(json["minimum"]),
     );
