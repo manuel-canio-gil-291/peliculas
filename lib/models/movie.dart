@@ -105,7 +105,10 @@ class Movie {
     int voteCount;
 
     get FullPosterImg {
-      return 'https://image.tmdb.org/t/p/w500${this.posterPath}';
+      if(posterPath != null)
+        return 'https://image.tmdb.org/t/p/w500${this.posterPath}';
+
+      return 'https://i.stack.imgur.com/GNhx0.png';
     }
 
     factory Movie.fromMap(Map<String, dynamic> json) => Movie(
