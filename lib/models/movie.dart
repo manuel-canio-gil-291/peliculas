@@ -81,7 +81,7 @@ class Movie {
         this.originalTitle,
         required this.overview,
         required this.popularity,
-        required this.posterPath,
+        this.posterPath,
         required this.releaseDate,
         required this.title,
         required this.video,
@@ -97,12 +97,16 @@ class Movie {
     String? originalTitle;
     String overview;
     double popularity;
-    String posterPath;
+    String? posterPath;
     DateTime releaseDate;
     String title;
     bool video;
     double? voteAverage;
     int voteCount;
+
+    get FullPosterImg {
+      return 'https://image.tmdb.org/t/p/w500${this.posterPath}';
+    }
 
     factory Movie.fromMap(Map<String, dynamic> json) => Movie(
         adult: json["adult"],
