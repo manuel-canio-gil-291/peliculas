@@ -9,13 +9,13 @@ class MoviesProvider extends ChangeNotifier {
   final String _apiKey = '57b768579acb56e6c5ddb5836c5e31a6';
   final String _baseUrl = 'api.themoviedb.org';
   final String _language = 'en-US';
-  
-  List<Movie> onDisplayMovies = ;
+
+  List<Movie> onDisplayMovies = [];
 
   MoviesProvider() {
     print('MoviesProvider inicializado');
 
-    getOnDisplayMovies();
+    this.getOnDisplayMovies();
   }
 
   getOnDisplayMovies() async {
@@ -30,10 +30,12 @@ class MoviesProvider extends ChangeNotifier {
 
     final response = await http.get(url);
     if(response.statusCode != 200) return print('error');
-    final nowPlayingResponse = NowPlayingResponse.fromJson(response.body);
+    final nowPlayingResponse = NowPlayingResponse.fromMap(response.headers);
 
-    print(nowPlayingResponse.results[0].title);
     final Map<String, dynamic> decodedData = json.decode(response.body);
+    
     onDisplayMovies = nowPlayingResponse.results;
+
+    notifyListeners();
   }
 }
