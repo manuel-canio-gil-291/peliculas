@@ -19,7 +19,7 @@ class CastingCards extends StatelessWidget {
 }
 
 class _CastCard extends StatelessWidget {
-  const _CastCard({super.key});
+  const _CastCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
