@@ -28,9 +28,9 @@ class CardSwiper extends StatelessWidget {
             onTap: () => Navigator.pushNamed(context, 'details'),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: const FadeInImage(
-                placeholder: AssetImage('assets/circular_progress_indicator_square_small.gif'), 
-                image: NetworkImage('https://via.placeholder.com/300x400.jpg'),
+              child: FadeInImage(
+                placeholder: const AssetImage('assets/circular_progress_indicator_square_small.gif'), 
+                image: NetworkImage(movie.FullPosterImg),
                 fit: BoxFit.cover
               ),
             ),
