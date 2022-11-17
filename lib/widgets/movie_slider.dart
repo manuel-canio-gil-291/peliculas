@@ -11,8 +11,8 @@ class MovieSlider extends StatelessWidget {
       color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        //TODO: Si no hay titulo no deben de mostrar este widget
         children: [
+          //TODO: Si no hay titulo no deben de mostrar este widget
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Text(
