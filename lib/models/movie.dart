@@ -69,7 +69,8 @@
 //
 //enum OriginalLanguage { EN, DE, JA, ES }
 
-import 'package:peliculas/models/models.dart';
+
+import 'dart:convert';
 
 class Movie {
     Movie({
@@ -103,6 +104,8 @@ class Movie {
     bool video;
     double? voteAverage;
     int voteCount;
+
+    factory Movie.fromJson(String str) => Movie.fromMap(json.decode(str));
 
     get FullPosterImg {
       if(posterPath != null)
