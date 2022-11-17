@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MovieSlider extends StatelessWidget {
-  const MovieSlider({Key? key}) : super(key : key);
+  const MovieSlider({Key? key, required List movies, required String title}) : super(key : key);
 
   @override
   Widget build(BuildContext context) {
