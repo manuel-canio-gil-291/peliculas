@@ -123,14 +123,14 @@ class Dates {
     };
 }
 
-class EnumValues<T> {
-    Map<String, T> map;
-    Map<T, String> reverseMap = Map.from();
-
-    EnumValues(this.map);
-
-    Map<T, String> get reverse {
-        reverseMap;
-        return reverseMap;
-    }
-}
+//class EnumValues<T> {
+//    Map<String, T> map;
+//    Map<T, String> reverseMap = Map.from();
+//
+//    EnumValues(this.map);
+//
+//    Map<T, String> get reverse {
+//        reverseMap;
+//        return reverseMap;
+//    }
+//}
