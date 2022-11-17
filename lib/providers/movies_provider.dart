@@ -12,6 +12,7 @@ class MoviesProvider extends ChangeNotifier {
   final String _language = 'en-US';
 
   List<Movie> onDisplayMovies = [];
+  List<Movie> popularMovies = [];
 
   MoviesProvider() {
     print('MoviesProvider inicializado');
