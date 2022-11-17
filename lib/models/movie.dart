@@ -91,9 +91,9 @@ class Movie {
 
     bool adult;
     String backdropPath;
-    List<int> genreIds;
+    String genreIds;
     int id;
-    OriginalLanguage? originalLanguage;
+    String? originalLanguage;
     String? originalTitle;
     String overview;
     double popularity;
@@ -114,9 +114,9 @@ class Movie {
     factory Movie.fromMap(Map<String, dynamic> json) => Movie(
         adult: json["adult"],
         backdropPath: json["backdrop_path"],
-        genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
+        genreIds: json["genre_ids"],
         id: json["id"],
-        originalLanguage: originalLanguageValues.map[json["original_language"]],
+        originalLanguage: json["original_language"],
         originalTitle: json["original_title"],
         overview: json["overview"],
         popularity: json["popularity"].toDouble(),
@@ -131,9 +131,9 @@ class Movie {
     Map<String, dynamic> toMap() => {
         "adult": adult,
         "backdrop_path": backdropPath,
-        "genre_ids": List<dynamic>.from(genreIds.map((x) => x)),
+        "genre_ids": genreIds,
         "id": id,
-        "original_language": originalLanguageValues.reverse[originalLanguage],
+        "original_language": originalLanguage,
         "original_title": originalTitle,
         "overview": overview,
         "popularity": popularity,
@@ -148,9 +148,9 @@ class Movie {
 
 enum OriginalLanguage { EN, DE, JA, ES }
 
-final originalLanguageValues = EnumValues({
-    "de": OriginalLanguage.DE,
-    "en": OriginalLanguage.EN,
-    "es": OriginalLanguage.ES,
-    "ja": OriginalLanguage.JA
-});
+//final originalLanguageValues = EnumValues({
+//    "de": OriginalLanguage.DE,
+//    "en": OriginalLanguage.EN,
+//    "es": OriginalLanguage.ES,
+//    "ja": OriginalLanguage.JA
+//});
