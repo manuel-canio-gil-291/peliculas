@@ -17,8 +17,8 @@ class MoviesProvider extends ChangeNotifier {
   MoviesProvider() {
     print('MoviesProvider inicializado');
 
-    getOnDisplayMovies();
-    getPopularMovies();
+    this.getOnDisplayMovies();
+    this.getPopularMovies();
   }
 
   getOnDisplayMovies() async {
@@ -33,7 +33,7 @@ class MoviesProvider extends ChangeNotifier {
 
     final response = await http.get(url);
     if(response.statusCode != 200) return print('error');
-    final nowPlayingResponse = NowPlayingResponse.fromMap(json.decode(response.body));
+    final nowPlayingResponse = NowPlayingResponse.fromJson(response.body);
 
     final Map<String, dynamic> decodedData = json.decode(response.body);
     
@@ -57,8 +57,7 @@ class MoviesProvider extends ChangeNotifier {
 
     final Map<String, dynamic> decodedData = json.decode(response.body);
     popularMovies = [...popularMovies, ...popularResponse.results];
-    
-    onDisplayMovies = popularResponse.results;
+    print(popularMovies[0]);
 
     notifyListeners();
   }
