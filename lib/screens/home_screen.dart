@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final moviesProvider = Provider.of<MoviesProvider>(context);
-    
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Peliculas en cines'),
@@ -22,15 +22,17 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Column(
-        children: [
-          //Tarjetas principales
-          CardSwiper(moviesProvider.onDisplayMovies, movies: const [],),
-          
-          //Slider de peliculas
-          const MovieSlider(),
-
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            //Tarjetas principales
+            CardSwiper(moviesProvider.onDisplayMovies, movies: const [],),
+            
+            //Slider de peliculas
+            const MovieSlider(movies: [], title: 'Populares'),
+      
+          ],
+        ),
       )
     );
   }
