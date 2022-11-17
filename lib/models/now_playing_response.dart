@@ -82,14 +82,14 @@ class NowPlayingResponse {
 
     Dates dates;
     int page;
-    List<Movie> results;
+    String results;
     int totalPages;
     int totalResults;
 
     factory NowPlayingResponse.fromMap(Map<String, dynamic> json) => NowPlayingResponse(
         dates: Dates.fromMap(json["dates"]),
         page: json["page"],
-        results: List<Movie>.from(json["results"].map((x) => Movie.fromMap(x))),
+        results: json["results"],
         totalPages: json["total_pages"],
         totalResults: json["total_results"],
     );
@@ -97,7 +97,7 @@ class NowPlayingResponse {
     Map<String, dynamic> toMap() => {
         "dates": dates.toMap(),
         "page": page,
-        "results": List<dynamic>.from(results.map((x) => x.toMap())),
+        "results": results,
         "total_pages": totalPages,
         "total_results": totalResults,
     };
