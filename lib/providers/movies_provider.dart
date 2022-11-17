@@ -30,7 +30,7 @@ class MoviesProvider extends ChangeNotifier {
 
     final response = await http.get(url);
     if(response.statusCode != 200) return print('error');
-    final nowPlayingResponse = NowPlayingResponse.fromMap(response.headers);
+    final nowPlayingResponse = NowPlayingResponse.fromMap(json.decode(response.body));
 
     final Map<String, dynamic> decodedData = json.decode(response.body);
     
