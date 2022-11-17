@@ -12,14 +12,13 @@ class MovieSlider extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          //TODO: Si no hay titulo no deben de mostrar este widget
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Text(
               'Populares', 
               style: TextStyle(
                 fontSize: 20, 
-                fontWeight: FontWeight.w400
+                fontWeight: FontWeight.bold
               )
             )
           ),
@@ -39,6 +38,8 @@ class MovieSlider extends StatelessWidget {
 class _MoviePoster extends StatelessWidget {
   const _MoviePoster({Key? key}) : super(key : key);
 
+  //TODO:
+  //final Movie movie;
   @override
   Widget build(BuildContext context) {
     return Container(
