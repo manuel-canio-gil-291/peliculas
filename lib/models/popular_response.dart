@@ -21,8 +21,6 @@ class PopularResponse {
 
     factory PopularResponse.fromJson(String str) => PopularResponse.fromMap(json.decode(str));
 
-    String toJson() => json.encode(toMap());
-
     factory PopularResponse.fromMap(Map<String, dynamic> json) => PopularResponse(
         page: json["page"],
         results: List<Movie>.from(json["results"].map((x) => Movie.fromMap(x))),
