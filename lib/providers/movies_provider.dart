@@ -1,5 +1,4 @@
 
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -60,6 +59,7 @@ class MoviesProvider extends ChangeNotifier {
   }
 
   Future<List<Cast>> getMovieCast( int movieId) async {
+    if(moviesCast.containsKey(movieId)) return moviesCast[movieId]!;
     final jsonData = await this._getJsonData('3/movie/$movieId/credits');
     final creditsResponse = CreditsResponse.fromJson(jsonData);
 
