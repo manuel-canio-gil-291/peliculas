@@ -29,7 +29,13 @@ class HomeScreen extends StatelessWidget {
             CardSwiper(moviesProvider.onDisplayMovies, movies: const [],),
             
             //Slider de peliculas
-            const MovieSlider(movies: [], title: 'Populares'),
+            MovieSlider(
+              movies: moviesProvider.popularMovies,
+              title: 'Populares', 
+              onNextPage: () => {
+                moviesProvider.getPopularMovies()
+              },
+            ),
       
           ],
         ),
