@@ -79,7 +79,7 @@ class Movie {
         required this.genreIds,
         required this.id,
         this.originalLanguage,
-        this.originalTitle,
+        required this.originalTitle,
         required this.overview,
         required this.popularity,
         this.posterPath,
@@ -95,7 +95,7 @@ class Movie {
     String genreIds;
     int id;
     String? originalLanguage;
-    String? originalTitle;
+    String originalTitle;
     String overview;
     double popularity;
     String? posterPath;
@@ -108,8 +108,17 @@ class Movie {
     factory Movie.fromJson(String str) => Movie.fromMap(json.decode(str));
 
     get FullPosterImg {
-      if(posterPath != null)
+      if(posterPath != null) {
         return 'https://image.tmdb.org/t/p/w500${this.posterPath}';
+      }
+
+      return 'https://i.stack.imgur.com/GNhx0.png';
+    }
+
+    get FullBackdropPath {
+      if(posterPath != null) {
+        return 'https://image.tmdb.org/t/p/w500${this.backdropPath}';
+      }
 
       return 'https://i.stack.imgur.com/GNhx0.png';
     }
