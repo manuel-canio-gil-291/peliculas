@@ -19,7 +19,6 @@ class _CardSwiperState extends State<CardSwiper> {
   @override
   Widget build(BuildContext context) {
     void initState() {
-      //TODO: Implement initState
       super.initState();
     }
 
